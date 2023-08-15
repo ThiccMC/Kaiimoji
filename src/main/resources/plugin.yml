@@ -5,6 +5,7 @@ api-version: 1.19
 folia-supported: true
 authors: [kugge]
 description: Kaiimojis!!
+depend: [SuperVanish]
 permissions:
   kaiimoji.heart:
     description: Heart kaiimoji

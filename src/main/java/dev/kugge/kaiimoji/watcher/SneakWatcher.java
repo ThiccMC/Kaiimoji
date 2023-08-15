@@ -1,5 +1,6 @@
 package dev.kugge.kaiimoji.watcher;
 
+import de.myzelyam.api.vanish.VanishAPI;
 import dev.kugge.kaiimoji.Kaiimoji;
 
 import org.bukkit.Location;
@@ -18,8 +19,10 @@ public class SneakWatcher implements Listener {
     public void onPlayerSneakToggle(PlayerToggleSneakEvent event) {
         if (!event.isSneaking()) return; // Only when sneaking!
         Player player = event.getPlayer();
+        boolean isVanishing = VanishAPI.isInvisible(player);
         // No kaiimoji when flying/sleeping!
-        if (player.isFlying() || player.isSleeping() || player.isGliding()) return;
+        // ThiccMC - no kaiimoji when vanishing - SuperVanishAPI hook!
+        if (player.isFlying() || player.isSleeping() || player.isGliding() || isVanishing) return;
         Long time = Kaiimoji.sneakDuration.getOrDefault(player, null);
         Kaiimoji.sneakDuration.put(player, System.currentTimeMillis());
 

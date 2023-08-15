@@ -1,7 +1,7 @@
 plugins {
     `java-library`
     id("com.github.johnrengelman.shadow") version "8.0.0"
-    id("xyz.jpenilla.run-paper") version "2.0.1"
+    id("xyz.jpenilla.run-paper") version "2.1.0"
 }
 
 
@@ -17,10 +17,12 @@ repositories {
     mavenCentral()
     maven("https://oss.sonatype.org/content/groups/public/")
     maven("https://papermc.io/repo/repository/maven-public/")
+    maven("https://jitpack.io")
 }
 
 dependencies {
     compileOnly("dev.folia:folia-api:1.19.4-R0.1-SNAPSHOT")
+    compileOnly("com.github.LeonMangler:SuperVanish:6.2.6-4")
 }
 
 tasks.compileJava {
