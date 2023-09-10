@@ -22,7 +22,7 @@ public class SneakWatcher implements Listener {
         boolean isVanishing = VanishAPI.isInvisible(player);
         // No kaiimoji when flying/sleeping!
         // ThiccMC - no kaiimoji when vanishing - SuperVanishAPI hook!
-        if (player.isFlying() || player.isSleeping() || player.isGliding() || isVanishing) return;
+        if (!player.isOnGround() || player.isFlying() || player.isSleeping() || player.isGliding() || isVanishing) return;
         Long time = Kaiimoji.sneakDuration.getOrDefault(player, null);
         Kaiimoji.sneakDuration.put(player, System.currentTimeMillis());
 
