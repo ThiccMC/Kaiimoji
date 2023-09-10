@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
     compileOnly("dev.folia:folia-api:1.19.4-R0.1-SNAPSHOT")
-    compileOnly("com.github.LeonMangler:SuperVanish:6.2.6-4")
+    compileOnly("com.github.LeonMangler:SuperVanish:6.2.17")
 }
 
 tasks.compileJava {
